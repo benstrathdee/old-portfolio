@@ -1,45 +1,18 @@
 header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-family: Helvetica;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: white;
+  display: flex;
+  justify-content: center;
 }
+
 nav {
-    width: 75%;
+  display: flex;
+  border: 2px solid black;
+  height: 500px;
+  width: 10%;
 }
-nav > ul {
-    border: 2px solid black;
-    width: 100%;
-    height: 60px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    list-style: none;
-    margin: 0px;
-    font-family: Helvetica;
-    font-weight: bold;
-}
-a:link {
-    text-decoration: none;
-    color: black;
-}
-a:visited {
-    color: black;
-}
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 150px;
-    font-family: arial;
-}
-footer {
-    display: flex;
-    justify-content: center;
-    font-family: arial;
+
+#navList {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  justify-content: space-around;
 }
