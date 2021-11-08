@@ -10,27 +10,40 @@
     <body>
         <header>
             <h1>Ben Strathdee - Junior Software Developer</h1>
+            <nav>
+                <ul class="navbar">
+                    <li class="navbar__item">
+                        <a href="#link-about">About</a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="#link-skills">Skills</a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="#link-projects">Projects</a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="#link-contact">Contact</a>
+                    </li>
+                </ul>
+            </nav>
         </header>
-        <nav>
-            <ul id="navList">
-                <li>About Me</li>
-                <li>My Skills</li>
-                <li>My Projects</li>
-                <li>Contact Me</li>
-            </ul>
-        </nav>
-        <main>
-            <section>
-                <h2>About Me</h2>
+        <main class="main-container">
+            <section class="main-container__spacer"></section>
+            <section class="main-container__big-card" id="about">
+                <a id="link-about"><h2>About Me</h2></a>
+                <div class="content"></div>
             </section>
-            <section>
-                <h2>My Skills</h2>
+            <section class="main-container__big-card" id="skills">
+                <a id="link-skills"><h2>My Skills</h2></a>
+                <div class="content"></div>
             </section>
-            <section>
-                <h2>Projects</h2>
+            <section class="main-container__big-card" id="projects">
+                <a id="link-projects"><h2>Projects</h2></a>
+                <div class="content"></div>
             </section>
-            <section>
-                <h2>Contact Me</h2>
+            <section class="main-container__big-card" id="contact">
+                <a id="link-contact"><h2>Contact Me</h2></a>
+                <div class="content"></div>
             </section>
         </main>
         <footer>© Ben Strathdee, 2021-2022</footer>
