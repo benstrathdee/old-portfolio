@@ -1,31 +1,35 @@
 @use "./partials/devices" as media;
 @use "./partials/mixins" as mixin;
 @use "./partials/palette";
+@use "./modules/sticky";
 html {
     background: url(./../images/background.jpg) no-repeat center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
+    // above set the background to fill
     background-size: cover;
 }
 body {
     margin: 0px;
     font-family: arial;
-    padding-top: 10%;
 }
 header {
-    // grid-area: header;
     @include mixin.centered-col;
-    position: fixed;
-    top: 0px;
+    height: 100vh;
+    color: white;
+    text-align: center;
+    font-size: 3em;
+}
+#navbar-container {
+    @include mixin.centered-col;
+    // position: fixed;
+    // top: 0px;
     z-index: 1;
     width: 100%;
     background-color: palette.$palette-1;
     color: white;
-    box-shadow: 0px 10px 13px -7px #000000;
-}
-nav {
-    width: 100%;
+    box-shadow: 0px 10px 13px -7px black;
 }
 .navbar {
     display: flex;
@@ -35,13 +39,22 @@ nav {
     justify-content: space-around;
     text-transform: uppercase;
     padding: 0px;
-    &__items {
+    & a {
+        display: inline-block;
+        font-weight: bolder;
+        font-size: 1.5em;
+        text-decoration: none;
         margin: 0px;
         padding: 0px;
+        &:hover {
+            transform: scale(1.5);
+        }
+        &:visited {
+            color: white;
+        }
     }
 }
 .main-container {
-    // grid-area: main;
     @include mixin.centered-col;
     &__big-card {
         display: grid;
@@ -52,6 +65,8 @@ nav {
         width: 90%;
         padding: 20px;
         margin: 20px;
+    }
+    &__header {
     }
     &__spacer {
         position: fixed;
@@ -67,4 +82,5 @@ nav {
 footer {
     text-align: center;
     color: white;
+    margin: 10px;
 }

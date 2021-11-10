@@ -1,3 +1,15 @@
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navbar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .main-container {
+  padding-top: 102px;
+}
+
 html {
   background: url(./../images/background.jpg) no-repeat center fixed;
   -webkit-background-size: cover;
@@ -9,7 +21,6 @@ html {
 body {
   margin: 0px;
   font-family: arial;
-  padding-top: 10%;
 }
 
 header {
@@ -17,17 +28,22 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: fixed;
-  top: 0px;
+  height: 100vh;
+  color: white;
+  text-align: center;
+  font-size: 3em;
+}
+
+#navbar-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   z-index: 1;
   width: 100%;
   background-color: #1a2a40;
   color: white;
-  box-shadow: 0px 10px 13px -7px #000000;
-}
-
-nav {
-  width: 100%;
+  box-shadow: 0px 10px 13px -7px black;
 }
 
 .navbar {
@@ -39,9 +55,19 @@ nav {
   text-transform: uppercase;
   padding: 0px;
 }
-.navbar__items {
+.navbar a {
+  display: inline-block;
+  font-weight: bolder;
+  font-size: 1.5em;
+  text-decoration: none;
   margin: 0px;
   padding: 0px;
+}
+.navbar a:hover {
+  transform: scale(1.5);
+}
+.navbar a:visited {
+  color: white;
 }
 
 .main-container {
@@ -74,4 +100,5 @@ nav {
 footer {
   text-align: center;
   color: white;
+  margin: 10px;
 }

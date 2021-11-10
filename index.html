@@ -5,40 +5,48 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="./css/style.css" />
+        <script
+            src="https://kit.fontawesome.com/f8fe226ff8.js"
+            crossorigin="anonymous"
+        ></script>
         <title>Ben Strathdee</title>
     </head>
     <body>
         <header>
-            <h1>Ben Strathdee - Junior Software Developer</h1>
-            <nav>
-                <ul class="navbar">
-                    <li class="navbar__item">
-                        <a href="#link-about">About</a>
-                    </li>
-                    <li class="navbar__item">
-                        <a href="#link-skills">Skills</a>
-                    </li>
-                    <li class="navbar__item">
-                        <a href="#link-projects">Projects</a>
-                    </li>
-                    <li class="navbar__item">
-                        <a href="#link-contact">Contact</a>
-                    </li>
-                </ul>
-            </nav>
+            <h1>
+                Ben Strathdee <br />
+                Junior Software Developer
+            </h1>
         </header>
+        <nav id="navbar-container">
+            <ul class="navbar">
+                <li class="navbar__item">
+                    <a href="#link-skills">Skills</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#link-projects">Projects</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#link-about">About</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="#link-contact">Contact</a>
+                </li>
+            </ul>
+        </nav>
         <main class="main-container">
-            <section class="main-container__spacer"></section>
-            <section class="main-container__big-card" id="about">
-                <a id="link-about"><h2>About Me</h2></a>
-                <div class="content"></div>
-            </section>
             <section class="main-container__big-card" id="skills">
                 <a id="link-skills"><h2>My Skills</h2></a>
-                <div class="content"></div>
+                <div class="content">
+                    <i class="fa-solid fa-html5"></i>
+                </div>
             </section>
             <section class="main-container__big-card" id="projects">
                 <a id="link-projects"><h2>Projects</h2></a>
+                <div class="content"></div>
+            </section>
+            <section class="main-container__big-card" id="about">
+                <a id="link-about"><h2>About Me</h2></a>
                 <div class="content"></div>
             </section>
             <section class="main-container__big-card" id="contact">
@@ -47,5 +55,21 @@
             </section>
         </main>
         <footer>© Ben Strathdee, 2021-2022</footer>
+        <script>
+            window.onscroll = function () {
+                myFunction();
+            };
+
+            var navbar = document.getElementById("navbar-container");
+            var sticky = navbar.offsetTop;
+
+            function myFunction() {
+                if (window.pageYOffset > sticky) {
+                    navbar.classList.add("sticky");
+                } else {
+                    navbar.classList.remove("sticky");
+                }
+            }
+        </script>
     </body>
 </html>
