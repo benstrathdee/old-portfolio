@@ -5,6 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="./css/style.css" />
+        <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
         <script
             src="https://kit.fontawesome.com/f8fe226ff8.js"
             crossorigin="anonymous"
@@ -20,50 +22,78 @@
         </header>
         <nav id="navbar-container">
             <ul class="navbar">
-                <li class="navbar__item">
-                    <a href="#link-skills">Skills</a>
+                <li>
+                    <a href="#link-skills" class="navbar__item">Skills</a>
                 </li>
-                <li class="navbar__item">
-                    <a href="#link-projects">Projects</a>
+                <li>
+                    <a href="#link-projects" class="navbar__item">Projects</a>
                 </li>
-                <li class="navbar__item">
-                    <a href="#link-about">About</a>
+                <li>
+                    <a href="#link-about" class="navbar__item">About</a>
                 </li>
-                <li class="navbar__item">
-                    <a href="#link-contact">Contact</a>
+                <li>
+                    <a href="#link-contact" class="navbar__item">Contact</a>
                 </li>
             </ul>
         </nav>
         <main class="main-container">
-            <section class="main-container__big-card" id="skills">
-                <a id="link-skills"><h2>My Skills</h2></a>
-                <div class="content">
-                    <i class="fa-solid fa-html5"></i>
+            <section class="main-container__big-card main-container__big-card--skills">
+                <a class="anchors" id="link-skills"><h2>My Skills</h2></a>
+                <div class="content content--skills">
+                    <span class="fab fa-html5"></span>
+                    <span class="fab fa-css3"></span>
+                    <span class="fab fa-sass"></span>
+                    <span class="fab fa-git"></span>
+                    <span class="fab fa-github"></span>
+                    <span class="fab fa-js"></span>
+                </div>
+                <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+            </section>
+            <section class="main-container__big-card main-container__big-card--projects">
+                <a class="anchors" id="link-projects"><h2>Projects</h2></a>
+                <div class="content content--projects">
+                    <a href="temp.temp"><img src="https://www.placecage.com/300/200" href="https://test.com"></a>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <a href="temp.temp"><img src="https://www.placecage.com/300/200" href="https://test.com"></a>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <a href="temp.temp"><img src="https://www.placecage.com/300/200" href="https://test.com"></a>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+                <div class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+            </section>
+            <section class="main-container__big-card main-container__big-card--about">
+                <a class="anchors" id="link-about"><h2>About Me</h2></a>
+                <div class="content content--about">
+                    <img src="./images/sebastian.jpeg" alt="">
+                    <img src="./images/amelia.jpg" alt="">
+                    <img src="./images/elizabeth.jpg" alt="">
+                </div>
+                <div class="description">
+                    <p>I have always had a love for computers and problem solving, and that really started to come together when I learned some basic programming skills to solve some issues at my last job. </p>
+                    <p>This eventually led to me finding _nology, where I participated in a 12 week coding boot camp to formally enter the software space.</p>
+                    <p>In my free time, I'm an RPG fiend, and I love spending time with my partner and our gorgeous pets.</p>
                 </div>
             </section>
-            <section class="main-container__big-card" id="projects">
-                <a id="link-projects"><h2>Projects</h2></a>
-                <div class="content"></div>
-            </section>
-            <section class="main-container__big-card" id="about">
-                <a id="link-about"><h2>About Me</h2></a>
-                <div class="content"></div>
-            </section>
-            <section class="main-container__big-card" id="contact">
-                <a id="link-contact"><h2>Contact Me</h2></a>
-                <div class="content"></div>
+            <section class="main-container__big-card main-container__big-card--contact">
+                <a class="anchors" id="link-contact"><h2>Contact Me</h2></a>
+                <div class="content">
+                    <a href="https://github.com/benstrathdee"><span class="fab fa-github"></span></a>
+                    <a href="https://www.linkedin.com/in/ben-strathdee-25b29b226/"><span class="fab fa-linkedin"></span></a>
+                    <a href="mailto:ben.strathdee@live.com.au"><span class="fas fa-envelope"></span></a>
+                </div>
+                <div class="description">Want to reach me about some work? Please see the links to the side!</div>
             </section>
         </main>
         <footer>© Ben Strathdee, 2021-2022</footer>
         <script>
             window.onscroll = function () {
-                myFunction();
+                stickyNav();
             };
 
-            var navbar = document.getElementById("navbar-container");
-            var sticky = navbar.offsetTop;
+            let navbar = document.getElementById("navbar-container");
+            let sticky = navbar.offsetTop;
 
-            function myFunction() {
+            function stickyNav() {
                 if (window.pageYOffset > sticky) {
                     navbar.classList.add("sticky");
                 } else {

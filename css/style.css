@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,300&display=swap");
 /* The sticky class is added to the navbar with JS when it reaches its scroll position */
 .sticky {
   position: fixed;
@@ -7,7 +8,7 @@
 
 /* Add some top padding to the page content to prevent sudden quick movement (as the navbar gets a new position at the top of the page (position:fixed and top:0) */
 .sticky + .main-container {
-  padding-top: 102px;
+  padding-top: 4em;
 }
 
 html {
@@ -16,11 +17,13 @@ html {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  scroll-behavior: smooth;
 }
 
 body {
   margin: 0px;
-  font-family: arial;
+  font-family: "Roboto", sans-serif;
+  color: #1a2a40;
 }
 
 header {
@@ -34,11 +37,12 @@ header {
   font-size: 3em;
 }
 
-#navbar-container {
+nav {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 4em;
   z-index: 1;
   width: 100%;
   background-color: #1a2a40;
@@ -49,13 +53,14 @@ header {
 .navbar {
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
   width: 100%;
   list-style: none;
-  justify-content: space-around;
   text-transform: uppercase;
   padding: 0px;
 }
-.navbar a {
+.navbar__item {
+  color: white;
   display: inline-block;
   font-weight: bolder;
   font-size: 1.5em;
@@ -63,10 +68,13 @@ header {
   margin: 0px;
   padding: 0px;
 }
-.navbar a:hover {
+.navbar__item:link {
+  color: white;
+}
+.navbar__item:hover {
   transform: scale(1.5);
 }
-.navbar a:visited {
+.navbar__item:visited {
   color: white;
 }
 
@@ -77,24 +85,95 @@ header {
   align-items: center;
 }
 .main-container__big-card {
+  border-radius: 20px;
   display: grid;
+  grid-template-areas: "title content" "description content";
   grid-template-columns: 1fr 3fr;
+  grid-template-rows: 1fr 4fr;
   background-color: #f2bea0;
   opacity: 0.7;
-  height: 500px;
   width: 90%;
+  height: fit-content;
   padding: 20px;
-  margin: 20px;
 }
-.main-container__spacer {
-  position: fixed;
-  top: 0px;
-  height: 100px;
+.main-container__big-card--skills {
+  height: fit-content;
+  margin: 15vh;
 }
-.main-container .content {
+.main-container__big-card--projects {
+  height: fit-content;
+  margin: 15vh;
+}
+.main-container__big-card--about {
+  height: fit-content;
+  margin: 5vh;
+}
+.main-container__big-card--contact {
+  height: fit-content;
+  margin: 5vh;
+}
+.main-container__big-card .description {
+  grid-area: description;
   background-color: white;
-  width: 100%;
-  height: 100%;
+  padding: 20px;
+  border-radius: 20px;
+  margin-right: 20px;
+  height: fit-content;
+}
+.main-container__big-card h2 {
+  grid-area: title;
+  text-align: center;
+  font-size: 3em;
+  color: #1a2a40;
+}
+.main-container__big-card .content {
+  grid-area: content;
+  color: #a66253;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 20px;
+  background-color: white;
+  height: fit-content;
+}
+.main-container__big-card .content--skills {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+}
+.main-container__big-card .content--projects {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  padding: 20px;
+  justify-content: space-around;
+}
+.main-container__big-card .content--about {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+}
+
+img {
+  border-radius: 20px;
+  width: 20vh;
+  margin: 10px;
+}
+
+.anchors {
+  scroll-margin-top: 15vh;
+}
+
+.fab, .fas {
+  font-size: 10em;
+  padding: 20px;
+  border: 2px solid #1a2a40;
+  border-radius: 20px;
+}
+.fab a, .fas a {
+  color: #a66253;
 }
 
 footer {
