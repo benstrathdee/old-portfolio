@@ -1,18 +1,263 @@
-header {
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,300&display=swap");
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navbar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .main-container {
+  padding-top: 4em;
+}
+
+html {
+  background: url(./../images/background.jpg) no-repeat center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  scroll-behavior: smooth;
+  font-size: 20px;
+}
+
+body {
+  margin: 0px;
+  font-family: "Roboto", sans-serif;
+  color: #1a2a40;
+}
+
+.header {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  color: white;
+  text-align: center;
+}
+.header h1 {
+  width: 100%;
+  font-size: 8vmax;
 }
 
 nav {
   display: flex;
-  border: 2px solid black;
-  height: 500px;
-  width: 10%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 4em;
+  z-index: 1;
+  width: 100%;
+  background-color: #1a2a40;
+  color: white;
+  box-shadow: 0px 10px 13px -7px black;
 }
 
-#navList {
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  list-style: none;
+  text-transform: uppercase;
+  padding: 0px;
+}
+.navbar__item {
+  display: inline-block;
+  font-weight: bolder;
+  font-size: 3vmax;
+  text-decoration: none;
+  margin: 0px;
+  padding: 0px;
+}
+@media only screen and (min-width: 993px) and (max-width: 1200px) {
+  .navbar__item {
+    font-size: 2vmax;
+  }
+}
+@media only screen and (min-width: 1201px) and (max-width: 1400px) {
+  .navbar__item {
+    font-size: 2vmax;
+  }
+}
+@media only screen and (min-width: 1401px) {
+  .navbar__item {
+    font-size: 2vmax;
+  }
+}
+.navbar__item:link {
+  color: white;
+}
+.navbar__item:hover {
+  transform: scale(1.2);
+}
+.navbar__item:visited {
+  color: white;
+}
+
+.main-container {
   display: flex;
   flex-direction: column;
-  list-style: none;
+  justify-content: center;
+  align-items: center;
+}
+.main-container__big-card {
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  background-color: #f2bea0;
+  opacity: 0.7;
+  width: 90%;
+  padding: 2%;
+}
+@media only screen and (min-width: 993px) and (max-width: 1200px) {
+  .main-container__big-card {
+    display: grid;
+    grid-template-areas: "title content" "description content";
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto auto;
+    justify-content: space-between;
+  }
+}
+@media only screen and (min-width: 1201px) and (max-width: 1400px) {
+  .main-container__big-card {
+    display: grid;
+    grid-template-areas: "title content" "description content";
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto auto;
+    justify-content: space-between;
+  }
+}
+@media only screen and (min-width: 1401px) {
+  .main-container__big-card {
+    display: grid;
+    grid-template-areas: "title content" "description content";
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto auto;
+    justify-content: space-between;
+  }
+}
+.main-container__big-card--skills {
+  height: auto;
+  margin: 10vh;
+}
+.main-container__big-card--projects {
+  height: auto;
+  margin: 10vh;
+}
+.main-container__big-card--about {
+  height: auto;
+  margin: 10vh;
+}
+.main-container__big-card--contact {
+  height: auto;
+  margin: 10vh;
+}
+.main-container__big-card .description {
+  grid-area: description;
+  background-color: #4f818c;
+  color: white;
+  padding: 5%;
+  border-radius: 20px;
+  margin: 5%;
+  height: fit-content;
+}
+.main-container__big-card h2 {
+  grid-area: title;
+  text-align: center;
+  font-size: 3em;
+  color: #1a2a40;
+}
+.main-container__big-card .content {
+  grid-area: content;
+  display: flex;
   justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  border-radius: 20px;
+  color: #a66253;
+  height: fit-content;
+}
+.main-container__big-card .content--skills {
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.main-container__big-card .content--projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 2%;
+}
+@media only screen and (min-width: 993px) and (max-width: 1200px) {
+  .main-container__big-card .content--projects {
+    display: grid;
+    grid-template-columns: auto 3fr;
+    justify-content: space-around;
+  }
+}
+@media only screen and (min-width: 1201px) and (max-width: 1400px) {
+  .main-container__big-card .content--projects {
+    display: grid;
+    grid-template-columns: auto 3fr;
+    justify-content: space-around;
+  }
+}
+@media only screen and (min-width: 1401px) {
+  .main-container__big-card .content--projects {
+    display: grid;
+    grid-template-columns: auto 3fr;
+    justify-content: space-around;
+  }
+}
+.main-container__big-card .content--about {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2%;
+}
+.main-container__big-card .content--contact {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.image {
+  border-radius: 20px;
+  margin: 2%;
+}
+.image--about {
+  max-width: 25%;
+  height: auto;
+  border: 2px solid #4f818c;
+}
+.image--about:hover {
+  box-shadow: 0px 10px 13px -7px black;
+}
+.image--projects {
+  max-width: 90%;
+  height: auto;
+}
+
+.anchors {
+  scroll-margin-top: 15vh;
+}
+
+.fab, .fas {
+  display: inline-flex;
+  font-size: 10vmax;
+  padding: 2%;
+  margin: 2%;
+  border: 1px solid rgba(0, 0, 0, 0);
+}
+.fab:hover, .fas:hover {
+  border: 1px solid black;
+  box-shadow: 0px 10px 13px -7px black;
+}
+
+footer {
+  text-align: center;
+  color: white;
+  margin: 10px;
 }
