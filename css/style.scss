@@ -12,18 +12,24 @@ html {
     // above set the background to fill
     background-size: cover;
     scroll-behavior: smooth;
+    font-size: 20px;
 }
 body {
     margin: 0px;
     font-family: 'Roboto', sans-serif;
     color: palette.$palette-1;
 }
-header {
+.header {
     @include mixin.centered-col;
+    width: 100%;
     height: 100vh;
     color: white;
     text-align: center;
-    font-size: 3em;
+    // font-size: 3em;
+    & h1 {
+        width: 100%;
+        font-size: 8vmax;
+    }
 }
 nav {
     @include mixin.centered-col;
@@ -43,10 +49,18 @@ nav {
     text-transform: uppercase;
     padding: 0px;
     &__item {
-        color: white;
         display: inline-block;
         font-weight: bolder;
-        font-size: 1.5em;
+        font-size: 3vmax;
+        @include media.laptop {
+            font-size: 2vmax;
+        }
+        @include media.desktop {
+            font-size: 2vmax;
+        }
+        @include media.max {
+            font-size: 2vmax;
+        }
         text-decoration: none;
         margin: 0px;
         padding: 0px;
@@ -54,7 +68,7 @@ nav {
             color: white;
         }
         &:hover {
-            transform: scale(1.5);
+            transform: scale(1.2);
         }
         &:visited {
             color: white;
@@ -65,35 +79,41 @@ nav {
     @include mixin.centered-col;
     &__big-card {
         border-radius: 20px;
-        display: grid;
-        grid-template-areas: 
-            "title content"
-            "description content";
-        grid-template-columns: 1fr 3fr;
-        grid-template-rows: 1fr 4fr;
+        display: flex;
+        flex-direction: column;
+        align-content: space-between;
+        @include media.laptop {
+            @include mixin.bigScreenCard;
+        }
+        @include media.desktop {
+            @include mixin.bigScreenCard;
+        }
+        @include media.max {
+            @include mixin.bigScreenCard;
+        }
         background-color: palette.$palette-4;
         opacity: 0.7;
         width: 90%;
-        height: fit-content;
-        padding: 20px;
+        padding: 2%;
         &--skills {
-            @include mixin.sizes(fit-content, 15vh);
+            @include mixin.sizes(auto, 10vh);
         }
         &--projects {
-            @include mixin.sizes(fit-content, 15vh);
+            @include mixin.sizes(auto, 10vh);
         }
         &--about {
-            @include mixin.sizes(fit-content, 5vh);
+            @include mixin.sizes(auto, 10vh);
         }
         &--contact {
-            @include mixin.sizes(fit-content, 5vh);
+            @include mixin.sizes(auto, 10vh);
         }
         & .description {
             grid-area: description;
-            background-color: white;
-            padding: 20px;
+            background-color: palette.$palette-2;
+            color: white;
+            padding: 5%;
             border-radius: 20px;
-            margin-right: 20px;
+            margin: 5%;
             height: fit-content;
         }
         & h2 {
@@ -104,50 +124,74 @@ nav {
         }
         & .content {
             grid-area: content;
-            color: palette.$palette-5;
             display: flex;
             justify-content: space-around;
             align-items: center;
-            border-radius: 20px;
             background-color: white;
+            border-radius: 20px;
+            color: palette.$palette-5;
             height: fit-content;
             &--skills {
-                display: grid;
-                grid-template-columns: 1fr 1fr 1fr;
-                justify-items: center;
+                flex-wrap: wrap;
+                justify-content: space-around;
                 align-items: center;
             }
             &--projects {
-                display: grid;
-                grid-template-columns: 1fr 3fr;
-                padding: 20px;
+                @include media.laptop {
+                    @include mixin.bigScreenDesc;
+                }
+                @include media.desktop {
+                    @include mixin.bigScreenDesc;
+                }
+                @include media.max {
+                    @include mixin.bigScreenDesc;
+                }
+                display: flex;
+                flex-wrap: wrap;
                 justify-content: space-around;
+                padding: 2%;
             }
             &--about {
-                display: grid;
-                grid-template-columns: 1fr 1fr 1fr;
-                justify-content: space-around;
-                align-items: center;
-                padding: 20px;
+                display: flex;
+                flex-wrap: wrap;
+                padding: 2%;
+            }
+            &--contact {
+                display: flex;
+                flex-wrap: wrap;
             }
         }
     }
 }
-img {
+.image {
     border-radius: 20px;
-    width: 20vh;
-    margin: 10px;
+    margin: 2%;
+    &--about {
+        max-width: 25%;
+        height: auto;
+        border: 2px solid palette.$palette-2;
+        &:hover {
+            box-shadow: 0px 10px 13px -7px black;
+        }
+    }
+    &--projects {
+        max-width: 90%;
+        height: auto;
+    }
 }
 .anchors {
     scroll-margin-top: 15vh;
 }
 .fab {
-    font-size: 10em;
-    padding: 20px;
-    border: 2px solid palette.$palette-1;
-    border-radius: 20px;
-    & a {
-        color: palette.$palette-5;
+    display: inline-flex;
+    font-size: 10vmax;
+    padding: 2%;
+    margin: 2%;
+    border: 1px solid rgba($color: #000000, $alpha: 0); // transparent border so adding it on hover doesn't move elements
+    &:hover {
+        border: 1px solid black;
+        box-shadow: 0px 10px 13px -7px black;
+
     }
 }
 .fas {
